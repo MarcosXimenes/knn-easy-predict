@@ -1,10 +1,12 @@
 from math import sqrt
 
+
 def euclidean_distance(row1, row2):
     distance = 0.0
-    for i in range(len(row1)-1):
-        distance += (row1[i]- row2[i])**2
+    for i in range(len(row1) - 1):
+        distance += (row1[i] - row2[i]) ** 2
     return sqrt(distance)
+
 
 def get_neighbors(train, test_row, num_neighbors):
     distances = list()
@@ -17,6 +19,7 @@ def get_neighbors(train, test_row, num_neighbors):
     for i in range(num_neighbors):
         neighbors.append(distances[i][0])
     return neighbors
+
 
 def predict_classification(train, test_row, num_neighbors):
     neighbors = get_neighbors(train, test_row, num_neighbors)
